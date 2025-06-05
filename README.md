@@ -1,10 +1,14 @@
 # capacitor-export-file
 
-A capacitor plugin to export file with Android SAF API
+A Capacitor plugin to export files using the Android SAF (Storage Access Framework) API and iOS UIDocumentPickerViewController.
 
-- Support capacitor v7.
-- Only support Android.
-- Written in kotlin, so you need to configure kotlin for your project before using it.
+- Supports Capacitor v7.
+- Works on Android, iOS & Web
+
+## Requirements
+
+* **Kotlin** must be configured in your Android project (required for Android support).
+* **iOS 16.0+** is required for the iOS implementation.
 
 ## Install
 
@@ -27,14 +31,14 @@ npx cap sync
 ### exportFile(...)
 
 ```typescript
-exportFile(options: { uri: string; filename?: string; }) => any
+exportFile(options: { uri: string; filename?: string; }) => Promise<{ uri: string; }>
 ```
 
 | Param         | Type                                             |
 | ------------- | ------------------------------------------------ |
 | **`options`** | <code>{ uri: string; filename?: string; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ uri: string; }&gt;</code>
 
 --------------------
 
